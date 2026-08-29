@@ -28,7 +28,6 @@
     </a>
 </p>
 
-
 Sometimes you just need macOS around to test stuff.
 
 ## Personal reminder / toolkit used
@@ -39,6 +38,11 @@ This repo is mostly a personal archive, but these are the tools and projects use
 * [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher) — root patches and legacy hardware support
 * [OCAT](https://github.com/ic005k/OCAuxiliaryTools) — OpenCore configuration and kext management
 * [Hackintool](https://github.com/benbaker76/Hackintool) — hardware inspection and Hackintosh diagnostics
+* [YogaSMC](https://github.com/zhen-zen/YogaSMC) — ThinkPad ACPI/SMC stuff and shortcut handling
+
+YogaSMC works. Some ThinkPad ACPI events aren't mapped though, so a few of the more esoteric buttons don't do anything. The **ThinkVantage button** is one example.
+
+Everything else relevant to this setup is working fine.
 
 This is **pure OpenCore**. There is no old Clover configuration, Clover kext collection, random leftover driver, or decade-old EFI archaeology floating around in here.
 
@@ -52,7 +56,6 @@ In other words: this isn't a 2018 Clover EFI that was dragged through six macOS 
 
 * Clean macOS Monterey installation
 * OCLP Root Patching
-
 
 ## SIP
 
@@ -118,7 +121,7 @@ Absolutely.
 
 Monterey isn't being used because it's new. It's being used because it's the point where the hardware, OS, patches, and general level of bullshit reach an acceptable equilibrium.
 
-**Newer macOS is possible territory.  
+**Newer macOS is possible territory.
 Monterey is usable territory.**
 
 That's good enough.
@@ -155,14 +158,34 @@ Bluetooth is handled by the BCM20702 USB device and the relevant kexts included 
 
 ---
 
+### YogaSMC?
+
+**Yes. Mostly.**
+
+[YogaSMC](https://github.com/zhen-zen/YogaSMC) handles the ThinkPad-specific ACPI/SMC stuff and works fine with this setup.
+
+There are a few ThinkPad ACPI events that aren't mapped though, so not every shortcut button is going to magically do something just because the hardware has one.
+
+The **ThinkVantage button**, for example, currently does fuck all.
+
+That's an event mapping problem, not YogaSMC falling over. The stuff that's actually mapped works.
+
+If someone eventually maps the missing events, great. If not, there's a perfectly good button on the keyboard that does absolutely nothing. Life goes on.
+
+---
+
 ### What doesn't work?
 
 A few things:
 
-* **Mic mute button** — doesn't work.
+* **Mic mute button** — needs to have YogaSMC app running + the fix option enabled in order to work.
+* **ThinkVantage button** — YogaSMC doesn't currently have the corresponding ACPI event mapped.
+* **ThinkLight** toggle works, but the state is reported back as always Off. Oh well
 * **SD card reader** — technically works, but don't trust it.
 
 The SD reader may appear to work, but I wouldn't use it for anything important. Treat it as decorative hardware with occasional aspirations.
+
+There are probably other ThinkPad shortcut/ACPI events hiding in the weeds that aren't mapped either. I haven't bothered chasing every last button because, frankly, the machine works.
 
 ---
 
@@ -181,6 +204,8 @@ The following are working well enough for daily use:
 * USB
 * Networking
 * The usual ThinkPad bits
+* YogaSMC
+* Most ThinkPad shortcuts / ACPI events
 
 It's fast, has decent battery life, and is surprisingly usable for hardware that's old enough to have opinions about the economy.
 
