@@ -38,6 +38,7 @@ This repo is mostly a personal archive, but these are the tools and projects use
 * [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher) — root patches and legacy hardware support
 * [OCAT](https://github.com/ic005k/OCAuxiliaryTools) — OpenCore configuration and kext management
 * [Hackintool](https://github.com/benbaker76/Hackintool) — hardware inspection and Hackintosh diagnostics
+* [MaciASL](https://github.com/acidanthera/MaciASL) — ACPI/SSDT editing and patching
 * [YogaSMC](https://github.com/zhen-zen/YogaSMC) — ThinkPad ACPI/SMC stuff and shortcut handling
 
 YogaSMC works. Some ThinkPad ACPI events aren't mapped though, so a few of the more esoteric buttons don't do anything. The **ThinkVantage button** is one example.
